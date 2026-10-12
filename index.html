@@ -2978,6 +2978,8 @@ function cSignOut(){
   return CLOUD.api.pending().then(function(){done=true})['catch'](function(){});
  }).then(function(){
   if(!navigator.onLine&&!done){island(L(L('Sei offline: alcune modifiche non sono ancora sul server. Esci quando torna la rete.')),{kind:'warn'});return}
+  /* a copy stays on the phone in any case: nothing can get lost on the way out */
+  try{if(S.appts.length||S.acts.length||Object.keys(S.exo).length||S.exCustom.length)localStorage.setItem(KEY+'-recupero-'+Date.now(),JSON.stringify(S))}catch(e){}
   cStop();var role=S.role;S=blank();S.role=role;Store.keep();CLOUD.sid='';CLOUD.user=null;try{localStorage.removeItem('nvx-signed')}catch(e){}
   CLOUD.api.out().then(function(){location.reload()});
  });
