@@ -12,4 +12,11 @@
      appId: "1:1234567890:web:abcdef"
    };
 */
-window.FB_CFG = null;
+window.FB_CFG = {
+  apiKey: "AIzaSyDrrGy5TFiMnsnF95Nik3WCwvbWkOQNb-o",
+  authDomain: "euro-tier-2026.firebaseapp.com",
+  projectId: "euro-tier-2026",
+  storageBucket: "euro-tier-2026.firebasestorage.app",
+  messagingSenderId: "103209516637",
+  appId: "1:103209516637:web:e427e4b1e354bd7ff097b4"
+};
